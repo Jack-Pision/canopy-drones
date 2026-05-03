@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CANOPY — Precision Agriculture Drones
+
+A modern, responsive website for CANOPY, a precision agriculture drone company. Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+
+## Live Demo
+
+[https://canopy-drones.vercel.app](https://canopy-drones.vercel.app)
+
+## Features
+
+- **3 Pages**: Home, Fleet, Technology
+- **Responsive Design**: Desktop-first with mobile breakpoints
+- **Animations**: Framer Motion for page transitions, scroll reveals, and micro-interactions
+- **Dark/Light Theme**: Dark hero sections with off-white content sections
+- **Interactive Components**: Animated stat counters, drone detail panels, scroll-driven highlights
+- **Performance**: Static export optimized for Vercel hosting
+
+## Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **State**: [Zustand](https://github.com/pmndrs/zustand)
+- **Fonts**: Space Grotesk + Space Mono (Google Fonts)
+
+## Project Structure
+
+```
+canopy/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx          # Root layout with fonts
+│   ├── page.tsx            # Home page
+│   ├── fleet/
+│   │   └── page.tsx        # Fleet page
+│   └── technology/
+│       └── page.tsx        # Technology page
+├── components/             # React components
+│   ├── Nav.tsx
+│   ├── Footer.tsx
+│   ├── DroneCard.tsx
+│   ├── DronePanel.tsx
+│   ├── StatCounter.tsx
+│   ├── ScrollReveal.tsx
+│   ├── FieldGrid.tsx
+│   ├── ProcessFlow.tsx
+│   └── HudLabels.tsx
+├── data/
+│   └── drones.ts           # Drone specifications
+├── store/
+│   └── droneStore.ts       # Zustand store
+├── hooks/
+│   └── useInView.ts        # IntersectionObserver hook
+├── public/
+│   └── images/             # Static images
+├── next.config.ts
+├── package.json
+└── tsconfig.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/Jack-Pision/canopy-drones.git
+cd canopy-drones
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build for Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This generates a static export in the `dist` folder, ready for Vercel deployment.
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+### Vercel (Recommended)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push your code to GitHub
+2. Import the repository in [Vercel](https://vercel.com)
+3. Deploy with default settings
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The `next.config.ts` is already configured for static export (`output: 'export'`).
 
-## Deploy on Vercel
+## Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Colors
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Primary BG**: `#0C1410` — Dark green-black
+- **Card BG**: `#111A13` — Slightly lighter dark
+- **Light BG**: `#F4F6F2` — Off-white for sections
+- **Accent**: `#9CFF57` — Acid green (CTAs, stats, highlights)
+- **Text**: `#EAEAEA` — Primary light text
+- **Muted**: `#3A5A3E` — Secondary text
+
+### Typography
+
+- **Display**: Space Grotesk (300, 500, 700)
+- **Mono/Data**: Space Mono (400)
+
+### Responsive Breakpoints
+
+- **Desktop**: 1440px+
+- **Tablet**: 1024px
+- **Mobile**: 640px
+
+## Credits
+
+**Built by [Jack Pision](https://github.com/Jack-Pision)**
+
+- [LinkedIn](https://linkedin.com/in/jack-pision-201764377)
+- [GitHub](https://github.com/Jack-Pision)
+- [X (Twitter)](https://x.com/Jack_pision)
+
+## License
+
+MIT License — feel free to use this project as a template for your own portfolio.
